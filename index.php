@@ -48,6 +48,10 @@
 
         <div class="inner cover">
 
+            <div class="page-header">
+                <h1>Hi! <small> Leuk dat je mijn digitale CV komt checken :-)</small></h1>
+            </div>
+
             <!-- Carousel container -->
             <div id="my-pics" class="carousel slide" data-ride="carousel" style="width:400px;margin:auto;">
 
@@ -64,16 +68,25 @@
                     <!-- Slide 1 -->
                     <div class="item active">
                         <img src="images/Koen%20Tibben.jpg">
+                        <div class="carousel-caption">
+                            <p>Hier zie je mijn zakelijke kant ;-)</p>
+                        </div>
                     </div>
 
                     <!-- Slide 2 -->
                     <div class="item">
                         <img src="images/Koen%20Tibben%202.png">
+                        <div class="carousel-caption">
+                            <p>Op deze foto begeef ik me op de Holterberg</p>
+                        </div>
                     </div>
 
                     <!-- Slide 3 -->
                     <div class="item">
                         <img src="images/Koen%20Tibben%203.png">
+                        <div class="carousel-caption">
+                            <p>Hier posseer ik vlakbij het strand op Schiermonnikoog</p>
+                        </div>
                     </div>
 
                 </div>
@@ -88,15 +101,11 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
           <br>
-          <br>
-          <h1 class="cover-heading">Hi! Dit ben ik. <small class="text-muted">Welkom op mijn digitale CV!</small></h1>
           <p class="lead">Mijn naam is Koen Tibben. Ik ben enthousiast, leergierig en gepassioneerd over web en
             technologie.</p>
         </div>
       </div>
-
     </div>
 
   </div>

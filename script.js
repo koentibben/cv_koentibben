@@ -61,5 +61,13 @@ function verstuurContactFormulier() {
         document.getElementById("berichtVerzender").style.backgroundColor = green;
     }
 
+    let successHeader = document.querySelector("h4");
+    function changeSuccessHeaderText(string) {
+        successHeader.innerHTML = string;
+    }
+
+    if (naamHasWhiteSpace === true && naamVerzender.length >= 5 && validEmail === true && berichtVerzender.length >= 10) {
+        changeSuccessHeaderText("Bedankt voor je bericht! Ik kom er zo snel mogelijk bij je op terug. Wie weet kunnen we iets voor elkaar betekenen. Een bakkie koffie kan nooit kwaad! :-)");
+    }
 }
 

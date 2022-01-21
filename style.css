@@ -174,5 +174,9 @@ img {
 }
 
 .progress-bar {
-  background-color: #6666ff;
+  background-color: #0d0d0d;
+}
+
+.popover {
+  background-color: black;
 }

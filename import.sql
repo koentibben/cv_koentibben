@@ -23,3 +23,15 @@ INSERT INTO `skills` (`type`, `skill`, `percentage`) VALUES
 ('Other', 'Git', 40),
 ('Other', 'Docker', 25),
 ('Other', 'Atlassian', 60);
+
+CREATE TABLE `courses` (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL
+);
+
+INSERT INTO `courses` (`course_name`) VALUES
+('ISTQB Certified Tester, Foundation Level'),
+('Java Programming Masterclass, Udemy'),
+('2020 Python Bootcamp: From Zero to Hero in Python, Udemy'),
+('Object Oriented programming with Java, Polteq'),
+('Information Security Foundation, LOI');

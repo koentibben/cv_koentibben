@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="icon" href="images/favicon.ico">
 
-  <title>Contact me</title>
+  <title>CV Koen Tibben</title>
 
   <!-- Bootstrap core CSS -->
 <!--  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
@@ -25,7 +25,7 @@
 
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="popover"]').popover()
         })
     </script>
 
@@ -58,6 +58,9 @@
           <script src="script.js"></script>
 
             <p class="h4">Hierbij mijn prachtige, zelf-in-elkaar-geknutselde contactformulier!</p>
+            <br>
+            <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+            <br>
 
             <br>
 
@@ -77,18 +80,25 @@
             </div>
             <br>
 
-            <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Wat fijn dat je me een berichtje wilt sturen!" onclick="verstuurContactFormulier();">Verstuur</button>
+            <button type="button" class="btn btn-primary" data-toggle="popover" data-trigger="hover" id="hoverBedanktBericht" data-placement="right" data-content="Wat fijn dat je me een berichtje wilt sturen!" onclick="verstuurContactFormulier();">Verstuur</button>
 
             </div>
 
-            <p class="h4">Ik kom er zo snel mogelijk bij je op terug. Wie weet kunnen we iets voor elkaar betekenen. Een bakkie koffie kan nooit kwaad! :-]</p>
+            <br>
+            <br>
 
+            <h4></h4>
+
+            <br>
+            <br>
+            <br>
+            <br>
 
             <a href="https://github.com/koentibben/">
             <img alt="GitHub Koen Tibben" src="images/github.png" width="65" height="65">
           </a>
           <a href="https://www.linkedin.com/in/koentibben/">
-            <img alt="LinkedIn Koen Tibben" src="images/linkedin.jpeg" width="65" height="65">
+            <img alt="LinkedIn Koen Tibben" src="images/linkedin.png" width="65" height="65">
           </a>
             <a href="https://twitter.com/koentibben">
                 <img alt="Twitter Koen Tibben" src="images/twitter.png" width="65" height="65">
@@ -98,9 +108,6 @@
       </div>
 
     </div>
-
-<!--  </div>-->
-
 </body>
 
 </html>

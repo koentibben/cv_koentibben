@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="icon" href="images/favicon.ico">
 
-  <title>Skills</title>
+  <title>CV Koen Tibben</title>
 
     <!-- Bootstrap core CSS -->
     <!--  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
