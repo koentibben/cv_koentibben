@@ -1,3 +1,34 @@
+<?php
+
+function queryFromCoursesTable($id)
+{
+    $host = 'localhost';
+    $db = 'cv_koentibben';
+    $username = 'bit_academy';
+    $password = 'bit_academy';
+    $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
+    try {
+        $con = new PDO($dsn, $username, $password);
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($con) {
+            $sql = "SELECT course_name FROM courses WHERE id = \"" . $id . "\"";
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch();
+        }
+    } catch (\PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
+function showCourses()
+{
+    for ($id = 1; $id <= 5; $id++) {
+        echo '<p>' . queryFromCoursesTable($id)[0] . '</p>';
+    }
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -12,7 +43,6 @@
     <title>CV Koen Tibben</title>
 
     <!-- Bootstrap core CSS -->
-    <!--  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 
@@ -47,67 +77,73 @@
                 </div>
             </div>
 
-            <?php
-            function queryFromCoursesTable($id)
-            {
-                $host = 'localhost';
-                $db = 'cv_koentibben';
-                $username = 'bit_academy';
-                $password = 'bit_academy';
-                $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
-                try {
-                    $con = new PDO($dsn, $username, $password);
-                    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    if ($con) {
-                        $sql = "SELECT course_name FROM courses WHERE id = \"" . $id . "\"";
-                        $stmt = $con->prepare($sql);
-                        $stmt->execute();
-                        return $stmt->fetch();
-                    }
-                } catch (\PDOException $e) {
-                    echo $e->getMessage();
-                }
-            }
-
-            ?>
-
             <div class="inner cover">
                 <h2>Werk</h2>
-                <ul class="list-unstyled">
-                    <li><b>Sqills</b></li>
-                    <p><em>Juni 2018 - heden</em></p>
-                    <p>Als Software Test Developer ben ik verantwoordelijk voor het schrijven, beoordelen en uitvoeren van
+                <p><b><em>Juni 2018 - heden</em></b></p>
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sqills" aria-expanded="false"
+                            aria-controls="sqills">
+                        Software Test Developer bij Sqills
+                    </button>
+                </p>
+                <div class="collapse" id="sqills">
+                    <div class="card card-body">
+                        Als Software Test Developer ben ik verantwoordelijk voor het schrijven, beoordelen en uitvoeren van-->
                         geautomatiseerde testcases. Het testteam van Sqills heeft de ambitie om in ons vakgebied een van de
                         koplopers in Nederland te zijn. Om dit te bereiken, moedigen we innovatie in tools, programmeertalen en
-                        processen sterk aan. </p>
-                    <li><b>S.V. Almelo</b></li>
-                    <p><em>Juli 2019 - Feb. 2021</em></p>
-                    <p>
-                        Als onderdeel van de communicatiecommissie was ik verantwoordelijk voor onze website, app en andere communicatie kanalen.</p>
-                    <li><b>De Buren Afhaalcentrum</b></li>
-                    <p><em>Juni 2016 - Mei 2017</em></p>
-                    <p>
-                        In deze rol was ik verantwoordelijk voor het functioneel testen van onze software. Ook was ik sterk
-                        betrokken bij het verfijnen van huidige applicaties en het schrijven/beheren van functionele ontwerpen en
-                        documentatie.</p>
-                </ul>
+                        processen sterk aan.
+                    </div>
+                </div>
                 <br>
+
+                <p><b><em>Juli 2019 - Feb. 2021</em></b></p>
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#svalmelo" aria-expanded="false"
+                            aria-controls="svalmelo">
+                        Communicatiecommissie bij S.V. Almelo
+                    </button>
+                </p>
+                <div class="collapse" id="svalmelo">
+                    <div class="card card-body">
+                        Als onderdeel van de communicatiecommissie was ik verantwoordelijk voor onze website, app en andere communicatie kanalen.
+                    </div>
+                </div>
+                <br>
+
+                <p><b><em>Juni 2016 - Mei 2017</em></b></p>
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#deBuren" aria-expanded="false"
+                            aria-controls="deBuren">
+                        Operationeel medewerker bij De Buren Afhaalcentrum
+                    </button>
+                </p>
+                <div class="collapse" id="deBuren">
+                    <div class="card card-body">
+                        In deze rol was ik verantwoordelijk voor het functioneel testen van onze software. Ook was ik sterk-->
+                        betrokken bij het verfijnen van huidige applicaties en het schrijven/beheren van functionele ontwerpen en
+                        documentatie.
+                    </div>
+                </div>
+                <br>
+
                 <h2>Opleidingen</h2>
-                <ul class="list-unstyled">
-                    <li><b>Security Management - Saxion Hogescholen</b></li>
-                    <p><em>2011 - 2016</em></p>
-                    <p>Tijdens deze studie heb ik diverse specifieke Security vakken gevolgd, zoals bedrijfscontinuïteit en
+                <p><b><em>2011 - 2016</em></b></p>
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#securityManagement" aria-expanded="false"
+                            aria-controls="securityManagement">
+                        Bachelor of Science (Security Management)
+                    </button>
+                </p>
+                <div class="collapse" id="securityManagement">
+                    <div class="card card-body">
+                        Tijdens deze studie heb ik diverse specifieke Security vakken gevolgd, zoals bedrijfscontinuïteit en
                         risicomanagement. Het laatste studiejaar heb ik me gespecialiseerd in
-                        cybersecurity door het volgen van de minor 'ICT & Security'.</p>
-                </ul>
+                        cybersecurity door het volgen van de minor 'ICT & Security'.
+                    </div>
+                </div>
                 <br>
                 <h2>Cursussen</h2>
-                <?php
-                for ($id = 1; $id <= 5; $id++) {
-                    $queryResult = queryFromCoursesTable($id);
-                    echo '<li>' . $queryResult[0] . '</li>';
-                }
-                ?>
+                <?php showCourses(); ?>
             </div>
         </div>
 

@@ -1,3 +1,7 @@
+const btn = document.querySelector('#btn');
+
+btn.addEventListener("click", verstuurContactFormulier);
+
 function verstuurContactFormulier() {
     let naamVerzender = document.querySelector("#naamVerzender").value;
     let emailVerzender = document.querySelector("#emailVerzender").value;
@@ -15,8 +19,7 @@ function verstuurContactFormulier() {
         return s.indexOf(' ') >= 0;
     }
 
-    function validateEmail(email)
-    {
+    function validateEmail(email) {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
@@ -54,7 +57,7 @@ function verstuurContactFormulier() {
         document.getElementById("berichtVerzender").style.backgroundColor = red;
         document.getElementById("berichtVerzender").innerText = berichtLengthErrorMessage;
         console.log(berichtVerzender + ' bevat minder dan 9 karakters en kan dus geen inhoudelijke boodschap bevatten');
-    } else if(berichtVerzender === "Je bericht moet minstens 10 karakters bevatten") {
+    } else if (berichtVerzender === "Je bericht moet minstens 10 karakters bevatten") {
         document.getElementById("berichtVerzender").style.backgroundColor = red;
         document.getElementById("berichtVerzender").innerText = berichtLengthErrorMessage;
     } else {
@@ -62,6 +65,7 @@ function verstuurContactFormulier() {
     }
 
     let successHeader = document.querySelector("h4");
+
     function changeSuccessHeaderText(string) {
         successHeader.innerHTML = string;
     }
